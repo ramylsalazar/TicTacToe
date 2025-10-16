@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TicTacToe" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Style for the Tic-Tac-Toe game buttons -->
+    <style name="TicTacToeButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:freezesText">true</item>
+    </style>
+</resources>

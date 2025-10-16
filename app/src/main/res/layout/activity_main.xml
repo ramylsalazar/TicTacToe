@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Player Choice Selection -->
+    <LinearLayout
+        android:id="@+id/ll_player_choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- *** ADD THIS TEXTVIEW FOR THE TITLE *** -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="Tic Tac Toe"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Choose Your Turn"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_play_as_x"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Go First" />
+
+        <Button
+            android:id="@+id/btn_play_as_o"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Go Second" />
+    </LinearLayout>
+
+    <!-- Main Game Area (The rest of the file is unchanged) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_game_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <!-- Status and Scoreboard -->
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textSize="24sp"
+                tools:text="Your Turn" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_score_player_x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="You: 0"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_score_player_o"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Computer: 0"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Tic Tac Toe Board -->
+        <GridLayout
+            android:id="@+id/gl_board"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_header">
+
+            <Button android:id="@+id/btn_00" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_01" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_02" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_10" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_11" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_12" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_20" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_21" style="@style/TicTacToeButton" />
+            <Button android:id="@+id/btn_22" style="@style/TicTacToeButton" />
+
+        </GridLayout>
+
+        <!-- Game Controls -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gl_board">
+
+            <Button
+                android:id="@+id/btn_reset_round"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Reset Round"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <Button
+                android:id="@+id/btn_new_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="New Game" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
